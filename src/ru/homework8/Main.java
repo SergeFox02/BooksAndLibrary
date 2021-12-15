@@ -7,36 +7,25 @@ public class Main {
         Author tolstoi = new Author("Lev", "Tolstoi");
         Author dostoevskii = new Author("Fedor", "Dostoevsky");
 
-        Book[] books = new Book[5];
-
         Book warAndPeace = new Book(tolstoi, "War and Peace");
         Book idiot = new Book(dostoevskii, "Idiot", 1868);
 
         System.out.println("warAndPeace.getPublisherYear() = " + warAndPeace.getPublisherYear());
         warAndPeace.setPublisherYear(1869);
 
-        setBook(books, warAndPeace);
-        setBook(books, warAndPeace);
-        setBook(books, idiot);
-        printBooks(books);
+        Library myLibrary = new Library(6);
 
-    }
+        myLibrary.setBook(warAndPeace);
+        myLibrary.setBook(warAndPeace);
+        myLibrary.setBook(idiot);
+        myLibrary.setBook(idiot);
 
-    public static void setBook(Book[] books, Book book) {
-        for (int i = 0; i < books.length; i++) {
-            if (books[i] == null) {
-                books[i] = book;
-                return;
-            }
-        }
-        System.out.println("В библиотеке нет места!");
-    }
+        myLibrary.printBooks();
 
-    public static void printBooks(Book[] books) {
-        for (int i = 0; i < books.length; i++)
-            if (books[i] != null) {
-                books[i].print();
-            }
+        myLibrary.setPublisherYear("War and Peace", 1878);
+
+        myLibrary.printBooks();
+
     }
 
 }
