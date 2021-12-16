@@ -26,6 +26,13 @@ public class Main {
 
         myLibrary.printBooks();
 
+        System.out.println(tolstoi);
+        System.out.println(idiot);
+
+        System.out.println(idiot.equals(idiot));
+        System.out.println(idiot.equals(warAndPeace));
+        System.out.println(tolstoi.equals(tolstoi));
+
     }
 
 }
