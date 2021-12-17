@@ -20,10 +20,6 @@ public class Author {
         return this.lastName;
     }
 
-    public void print() {
-        System.out.println(firstName + " " + lastName);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

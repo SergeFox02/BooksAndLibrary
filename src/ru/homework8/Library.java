@@ -6,19 +6,17 @@ public class Library {
 
     public Library(int length) {
         this.books = new Book[length];
-        for (int i = 0; i < this.books.length; i++) {
-            this.books[i] = null;
-        }
     }
 
-    public void setBook(Book book) {
+    public boolean addBook(Book book) {
         for (int i = 0; i < this.books.length; i++) {
             if (this.books[i] == null) {
                 this.books[i] = book;
-                return;
+                return true;
             }
         }
         System.out.println("В библиотеке нет места!");
+        return false;
     }
 
     public void printBooks() {
@@ -30,7 +28,7 @@ public class Library {
 
     public void setPublisherYear(String nameBook, int publisherYear) {
         for (int i = 0; i < this.books.length; i++) {
-            if (this.books[i] != null && this.books[i].getName() == nameBook) {
+            if (this.books[i] != null && this.books[i].getName().equals(nameBook)) {
                 this.books[i].setPublisherYear(publisherYear);
             }
         }

@@ -15,10 +15,10 @@ public class Main {
 
         Library myLibrary = new Library(6);
 
-        myLibrary.setBook(warAndPeace);
-        myLibrary.setBook(warAndPeace);
-        myLibrary.setBook(idiot);
-        myLibrary.setBook(idiot);
+        myLibrary.addBook(warAndPeace);
+        myLibrary.addBook(warAndPeace);
+        myLibrary.addBook(idiot);
+        myLibrary.addBook(idiot);
 
         myLibrary.printBooks();
 

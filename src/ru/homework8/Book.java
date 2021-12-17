@@ -5,12 +5,12 @@ import java.util.Objects;
 public class Book {
 
     private final Author author;
-    private final String name;
+    private final String title;
     private int publisherYear;
 
     public Book(Author author, String name, int publisherYear) {
         this.author = author;
-        this.name = name;
+        this.title = name;
         this.publisherYear = publisherYear;
     }
 
@@ -23,7 +23,7 @@ public class Book {
     }
 
     public String getName() {
-        return this.name;
+        return this.title;
     }
 
     public int getPublisherYear() {
@@ -35,7 +35,7 @@ public class Book {
     }
 
     public void print() {
-        System.out.println(author.getFirstName() + " " + author.getLastName() + ": " + this.name + ": " + this.publisherYear);
+        System.out.println(author.getFirstName() + " " + author.getLastName() + ": " + this.title + ": " + this.publisherYear);
     }
 
     @Override
@@ -43,16 +43,16 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return author.equals(book.author) && name.equals(book.name);
+        return author.equals(book.author) && title.equals(book.title);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(author, name);
+        return Objects.hash(author, title);
     }
 
     @Override
     public String toString() {
-        return "Книга: " + this.author.getFirstName() + " " + this.author.getLastName() + ": " + name + ": " + publisherYear;
+        return "Книга: " + author + ": " + title + ": " + publisherYear;
     }
 }
